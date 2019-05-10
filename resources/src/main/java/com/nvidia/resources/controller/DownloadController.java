@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nvidia.resources.service.ResourcesService;
@@ -30,7 +31,7 @@ public class DownloadController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(DownloadController.class);
 
-//	@RequestMapping(method = { RequestMethod.GET }, value = { "/excel" })
+	@RequestMapping(method = { RequestMethod.GET }, value = { "/excel" })
 //	@ApiOperation("This service download the excel sheet")
 	public void downloadExcel(HttpServletResponse response) {
 		response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
